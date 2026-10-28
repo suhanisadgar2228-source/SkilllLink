@@ -1,0 +1,241 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="SkillLink helps students discover internships, explore careers and track job applications.">
+  <title>SkillLink | Find Your Next Opportunity</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <header class="navbar">
+    <a href="#home" class="logo"><span class="logo-icon">S</span> SkillLink<span class="dot">.</span></a>
+    <nav>
+      <a href="#home" class="nav-link active">Home</a>
+      <a href="#jobs" class="nav-link">Find Jobs</a>
+      <a href="#saved" class="nav-link">Saved Jobs</a>
+      <a href="#applications" class="nav-link">My Applications</a>
+    </nav>
+    <a href="#jobs" class="nav-cta">Explore Opportunities ↗</a>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="hero-content">
+        <div class="eyebrow"><span class="live-dot"></span> YOUR CAREER STARTS HERE</div>
+        <h1>Find opportunities.<br>Build your <span>future.</span></h1>
+        <p class="hero-description">
+          Discover internships, explore exciting career paths, and take
+          the first step toward your dream job with SkillLink.
+        </p>
+        <div class="hero-actions">
+          <a href="#jobs" class="btn btn-primary">Explore Opportunities <span>↗</span></a>
+          <a href="#how-it-works" class="btn btn-light">How it works ↓</a>
+        </div>
+        <div class="hero-proof">
+          <div class="avatar-stack">
+            <span>A</span><span>R</span><span>P</span><span>S</span>
+          </div>
+          <p><strong>One step closer</strong><br>to your career goals.</p>
+        </div>
+      </div>
+
+      <div class="hero-visual">
+        <div class="decor decor-one"></div>
+        <div class="decor decor-two"></div>
+        <div class="floating-card floating-top">
+          <span class="floating-icon">✦</span>
+          <div><strong>Dream big.</strong><small>Start somewhere.</small></div>
+        </div>
+        <div class="hero-panel">
+          <div class="panel-top">
+            <div>
+              <span class="panel-label">YOUR NEXT CHAPTER</span>
+              <h3>Opportunities<br>made for you.</h3>
+            </div>
+            <span class="sparkle">✳</span>
+          </div>
+          <div class="mini-job">
+            <div class="mini-logo purple">UI</div>
+            <div class="mini-info"><strong>UI/UX Designer</strong><small>Creative Studio</small></div>
+            <span class="mini-arrow">↗</span>
+          </div>
+          <div class="mini-job">
+            <div class="mini-logo green">DE</div>
+            <div class="mini-info"><strong>Data Analyst</strong><small>Insight Labs</small></div>
+            <span class="mini-arrow">↗</span>
+          </div>
+          <div class="mini-job">
+            <div class="mini-logo orange">WD</div>
+            <div class="mini-info"><strong>Web Developer</strong><small>Digital Works</small></div>
+            <span class="mini-arrow">↗</span>
+          </div>
+          <a href="#jobs" class="panel-footer">Explore your possibilities <span>→</span></a>
+        </div>
+        <div class="floating-card floating-bottom">
+          <span class="success-icon">✓</span>
+          <div><strong>Progress starts now</strong><small>Your journey, your pace.</small></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="stats">
+      <div><strong>01</strong><span>Discover opportunities</span></div>
+      <div><strong>02</strong><span>Find your best fit</span></div>
+      <div><strong>03</strong><span>Track your progress</span></div>
+      <div><strong>04</strong><span>Grow your career</span></div>
+    </section>
+
+    <section class="jobs-section section" id="jobs">
+      <div class="section-heading">
+        <div>
+          <span class="section-label">OPPORTUNITIES AWAIT</span>
+          <h2>Find your next <span>opportunity.</span></h2>
+          <p>Explore sample internship listings and discover where your skills can take you.</p>
+        </div>
+        <div class="job-count" id="jobCount">0 opportunities</div>
+      </div>
+
+      <div class="search-panel">
+        <div class="search-field">
+          <span>⌕</span>
+          <input type="search" id="searchInput" placeholder="Job title, skill or company..." aria-label="Search jobs">
+        </div>
+        <select id="categoryFilter" aria-label="Filter by category">
+          <option value="all">All categories</option>
+          <option value="Development">Development</option>
+          <option value="Design">Design</option>
+          <option value="Data">Data & Analytics</option>
+          <option value="Marketing">Marketing</option>
+          <option value="Engineering">Engineering</option>
+        </select>
+        <select id="typeFilter" aria-label="Filter by work type">
+          <option value="all">All work types</option>
+          <option value="Remote">Remote</option>
+          <option value="Hybrid">Hybrid</option>
+          <option value="On-site">On-site</option>
+        </select>
+        <button class="btn btn-primary search-btn" id="searchButton">Search</button>
+      </div>
+
+      <div class="filter-row">
+        <span>Popular skills:</span>
+        <button class="skill-chip" data-skill="JavaScript">JavaScript</button>
+        <button class="skill-chip" data-skill="Python">Python</button>
+        <button class="skill-chip" data-skill="React">React</button>
+        <button class="skill-chip" data-skill="SQL">SQL</button>
+        <button class="skill-chip" data-skill="UI/UX">UI/UX</button>
+        <button class="clear-filter" id="clearFilters">Clear filters ×</button>
+      </div>
+
+      <div class="job-grid" id="jobGrid"></div>
+      <div class="empty-state hidden" id="emptyJobs">
+        <span>⌕</span>
+        <h3>No matching opportunities</h3>
+        <p>Try another keyword or change your filters.</p>
+        <button class="btn btn-primary" id="resetSearch">Show all jobs</button>
+      </div>
+      <p class="demo-note">Demo project: these are sample listings, not verified live vacancies.</p>
+    </section>
+
+    <section class="saved-section section alt-section" id="saved">
+      <div class="section-heading">
+        <div>
+          <span class="section-label">YOUR SHORTLIST</span>
+          <h2>Opportunities you've <span>saved.</span></h2>
+          <p>Keep your favourite opportunities in one place.</p>
+        </div>
+        <span class="count-badge" id="savedCount">0 saved</span>
+      </div>
+      <div class="job-grid" id="savedGrid"></div>
+      <div class="empty-state" id="emptySaved">
+        <span>♡</span>
+        <h3>Your shortlist starts here</h3>
+        <p>Save a job using the heart button to see it here.</p>
+        <a href="#jobs" class="btn btn-light">Explore jobs →</a>
+      </div>
+    </section>
+
+    <section class="tracker-section section" id="applications">
+      <div class="section-heading">
+        <div>
+          <span class="section-label">YOUR CAREER JOURNEY</span>
+          <h2>Track your <span>applications.</span></h2>
+          <p>Keep an eye on the opportunities you've applied for.</p>
+        </div>
+      </div>
+      <div class="tracker-summary" id="trackerSummary">
+        <div><span>Total applications</span><strong id="totalApps">0</strong></div>
+        <div><span>Under review</span><strong id="reviewApps">0</strong></div>
+        <div><span>Offers received</span><strong id="offerApps">0</strong></div>
+      </div>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr><th>POSITION</th><th>COMPANY</th><th>DATE APPLIED</th><th>STATUS</th><th>ACTION</th></tr>
+          </thead>
+          <tbody id="applicationBody"></tbody>
+        </table>
+      </div>
+      <div class="empty-state" id="emptyApplications">
+        <span>↗</span>
+        <h3>Your next step starts here</h3>
+        <p>Apply to an opportunity and your application will appear here.</p>
+        <a href="#jobs" class="btn btn-light">Find opportunities →</a>
+      </div>
+    </section>
+
+    <section class="how-section section" id="how-it-works">
+      <div class="section-heading centered">
+        <span class="section-label">SIMPLE BY DESIGN</span>
+        <h2>Your journey, <span>three steps.</span></h2>
+        <p>From discovery to application, make every step count.</p>
+      </div>
+      <div class="steps-grid">
+        <article class="step-card">
+          <span class="step-number">01</span>
+          <div class="step-icon">⌕</div>
+          <h3>Discover</h3>
+          <p>Search opportunities that match your interests, skills, and career goals.</p>
+        </article>
+        <article class="step-card">
+          <span class="step-number">02</span>
+          <div class="step-icon">♡</div>
+          <h3>Shortlist & Apply</h3>
+          <p>Save the right roles and add them to your personal application tracker.</p>
+        </article>
+        <article class="step-card">
+          <span class="step-number">03</span>
+          <div class="step-icon">↗</div>
+          <h3>Move Forward</h3>
+          <p>Update your application statuses and keep building your career journey.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="cta-section">
+      <div>
+        <span class="section-label">YOUR FUTURE IS CALLING</span>
+        <h2>Every great career<br>starts with a <span>first step.</span></h2>
+        <p>Find an opportunity that inspires you. Start exploring today.</p>
+      </div>
+      <a href="#jobs" class="btn btn-white">Find your opportunity ↗</a>
+      <div class="cta-decoration">✳</div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <a href="#home" class="logo"><span class="logo-icon">S</span> SkillLink<span class="dot">.</span></a>
+    <p>Made for dreamers, learners, and future professionals.</p>
+    <span>© <span id="year"></span> SkillLink. Student portfolio project.</span>
+  </footer>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
